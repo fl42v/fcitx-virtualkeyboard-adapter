@@ -5,7 +5,7 @@
     nixpkgs,
   }: let
     inherit (nixpkgs) lib;
-    eachSystem = lib.genAttrs ["x86_64-linux"];
+    eachSystem = lib.genAttrs ["x86_64-linux" "aarch64-linux"];
     pkgsFor = eachSystem (
       system:
         import nixpkgs {
